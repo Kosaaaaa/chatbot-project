@@ -26,10 +26,6 @@ repos:
       - id: mypy
         additional_dependencies:
           - pydantic
-          - pydantic-extra-types
-          - alembic
-          - types-aiofiles
-          - types-redis
   - repo: https://github.com/DetachHead/basedpyright-pre-commit-mirror
     rev: 1.29.1
     hooks:
