@@ -6,7 +6,7 @@ from fastapi.responses import FileResponse
 
 from app.application.entrypoints.dependencies.static import get_chat_app_ts_file_path, get_index_html_file_path
 
-index_router = APIRouter()
+index_router = APIRouter(include_in_schema=False)
 
 
 @index_router.get("/")
