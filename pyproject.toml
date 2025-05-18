@@ -158,7 +158,7 @@ venvPath = "."
 venv = ".venv"
 pythonVersion = "3.13"
 
-exclude = ["alembic"]
+exclude = ["migrations"]
 
 reportAny = false
 reportExplicitAny = false
