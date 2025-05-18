@@ -1,0 +1,14 @@
+Dockerfile
+k8s/
+.gitlab/
+.coverage
+.env.ci
+.env.example
+.gitlab-ci.yml
+.pre-commit-config.yaml
+docker-compose.yaml
+Makefile
+README.md
+skaffold.yml
+.venv/
+venv/
