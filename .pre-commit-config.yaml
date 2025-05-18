@@ -26,6 +26,7 @@ repos:
       - id: mypy
         additional_dependencies:
           - pydantic
+          - sqlmodel
   - repo: https://github.com/DetachHead/basedpyright-pre-commit-mirror
     rev: 1.29.1
     hooks:
