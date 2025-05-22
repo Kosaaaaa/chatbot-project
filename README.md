@@ -2,6 +2,9 @@
 
 A modern chatbot application built with FastAPI and powered by AI language models. This project provides a web-based chat interface that connects to AI models through the OpenAI API or local model servers like Ollama.
 
+## Demo
+[Demo Video](https://streamable.com/6y6n8x)
+
 ## Features
 
 - Real-time chat interface with streaming responses
