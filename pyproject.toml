@@ -20,8 +20,10 @@ dependencies = [
   "asyncpg (>=0.30.0,<0.31.0)",
   "pydantic-ai (>=0.2.4,<0.3.0)",
 ]
-package-mode = false
 packages = [{ include = "app" }]
+
+[tool.poetry]
+package-mode = false
 
 
 [build-system]
