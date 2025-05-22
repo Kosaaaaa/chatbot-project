@@ -21,6 +21,9 @@ class Settings(BaseSettings):
     DB_PASSWORD: str
     DB_NAME: str
 
+    OPENAI_MODEL_NAME: str = "deepseek-r1:1.5b"
+    OPENAI_PROVIDER_BASE_URL: str = "http://127.0.0.1:11434/v1"
+
     model_config: ClassVar[SettingsConfigDict] = SettingsConfigDict(
         env_nested_delimiter="__",
         env_file=".env",
