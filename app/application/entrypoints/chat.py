@@ -13,21 +13,13 @@ from pydantic_ai.messages import (
     TextPart,
     UserPromptPart,
 )
-from pydantic_ai.models.openai import OpenAIModel
-from pydantic_ai.providers.openai import OpenAIProvider
 
+from app.application.entrypoints.dependencies.agent import get_agent
 from app.application.entrypoints.dependencies.storage import get_chat_message_repository
 from app.application.entrypoints.schema.chat_message import ChatMessage
 from app.infrastructure.database.repository.chat_message import ChatMessageRepository
 
 chat_router = APIRouter(prefix="/chat", tags=["chat"])
-
-ollama_model = OpenAIModel(
-    model_name="deepseek-r1:1.5b",
-    provider=OpenAIProvider(base_url="http://127.0.0.1:11434/v1"),
-)
-
-agent = Agent(model=ollama_model)
 
 
 def to_chat_message(m: ModelMessage) -> ChatMessage:
@@ -62,6 +54,7 @@ async def get_chat(
 @chat_router.post("/")
 async def post_chat(
     prompt: Annotated[str, Form()],
+    agent: Annotated[Agent, Depends(get_agent)],
     chat_message_repository: Annotated[ChatMessageRepository, Depends(get_chat_message_repository)],
 ) -> StreamingResponse:
     async def stream_messages():
